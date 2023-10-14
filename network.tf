@@ -26,14 +26,14 @@ module "vpc" {
 }
 
 resource "google_compute_firewall" "tf-firewall"{
-  name    = "tf-firewall"
- network = "projects/qwiklabs-gcp-04-cbc1e3b99bba/global/networks/tf-vpc-135562"
+    name    = "tf-firewall"
+    network = "projects/qwiklabs-gcp-04-cbc1e3b99bba/global/networks/tf-vpc-135562"
 
-  allow {
-    protocol = "tcp"
-    ports    = ["80"]
-  }
+    allow {
+        protocol = "tcp"
+        ports    = ["80"]
+    }
 
-  source_tags = ["web"]
-  source_ranges = ["0.0.0.0/0"]
+    source_tags = ["web"]
+    source_ranges = ["0.0.0.0/0"]
 }
